@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="icons/logo.png" type="image/x-icon">
+    <title>New Tab</title>
+</head>
+<body>
+    <h1 id="week-day">New Tab</h1>
+    <div class="search">
+        <input type="text" id="search-input" placeholder="Search" oninput="search(this.value)" onsubmit="alert(this.value)">
+        <img src="icons/search.svg" onclick="search()">
+    </div>
+    <script src="js/main.js"></script>
+    <div class="favourites-title-container">
+        <h2 class="favourites-title">Favourites</h2>
+        <img src="icons/add.svg" onclick="createFavourite()">
+    </div>
+    <div class="favourites" id="favourites">
+        <a href="#" id="favourite-blueprint" oncontextmenu="event.preventDefault(); favouritePopup(this)">
+            <img src="">
+            <div class="fav-text">
+                <span></span>
+            </div>
+        </a>
+    </div>
+    <div class="top-bar">
+        <img src="icons/settings.svg" onclick="settingsPopup()">
+    </div>
+    <div class="settings" id="settings">
+        <h2>Search engine</h2>
+        <select id="search-engine" onchange="changeSearchEngine(this.value)">
+            <option value="google">Google</option>
+            <option value="duckduckgo">DuckDuckGo</option>
+            <option value="bing">Bing</option>
+            <option value="yahoo">Yahoo</option>
+        </select>
+        <h2>Colors</h2>
+        <div class="colors">
+            <span>Text color: </span>
+            <input type="color" id="text-picker" value="#ffffff" oninput="changeColor(this)">
+            <br>
+            <span>Blend text: </span>
+            <input type="checkbox" onclick="blendText(this)" id="blend-box" checked>
+        </div>
+        <h2>Wallpapers</h2>
+        <div class="wallpapers">
+            <img src="wallpapers/white1.jpg" onclick="setWallpaper(this.src)">
+            <img src="wallpapers/white2.jpg" onclick="setWallpaper(this.src)">
+            <img src="wallpapers/white3.jpg" onclick="setWallpaper(this.src)">
+            <img src="wallpapers/white4.jpg" onclick="setWallpaper(this.src)">
+            <img src="wallpapers/dark1.jpg"onclick="setWallpaper(this.src)">
+            <img src="wallpapers/dark2.jpg"onclick="setWallpaper(this.src)">
+            <img src="wallpapers/dark3.jpg"onclick="setWallpaper(this.src)">
+            <img src="wallpapers/dark4.jpg"onclick="setWallpaper(this.src)">
+            <img src="wallpapers/blue1.jpg"onclick="setWallpaper(this.src)">
+        </div>
+    </div>
+    <div class="delete-popup-container" id="delete-popup">
+        <div class="delete-popup">
+            <span>Are you sure you want to delete this favourite?</span>
+            <div class="delete-popup-buttons">
+                <button onclick="deleteFavourite()">Yes</button>
+                <button onclick="closeDeletePopup()">No</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
