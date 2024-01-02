@@ -74,10 +74,7 @@ function settingsPopup() {
 }
 
 function setWallpaper(src) {
-    let path = src.split("/");
-    path = path[path.length - 1];
-    path = "wallpapers/" + path;
-    localStorage.setItem("wallpaper", path);
+    localStorage.setItem("wallpaper", src);   
     document.body.style.backgroundImage = "url(" + localStorage.getItem("wallpaper") + ")";
 }
 
